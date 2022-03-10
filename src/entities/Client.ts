@@ -31,9 +31,9 @@ export class Client extends Person {
   @Column({ type: 'simple-array', default: [] })
   familyMembers: string[];
   @CreateDateColumn()
-  createdAt: Date;
+  created_at: Date;
   @UpdateDateColumn()
-  updatedAt: Date;
+  updated_at: Date;
   //client can have many banker connected with him .
   @ManyToMany(() => Banker, {
     cascade: true,

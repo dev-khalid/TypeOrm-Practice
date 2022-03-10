@@ -14,5 +14,5 @@ export class Person extends BaseEntity {
     length: 10,
     unique: true,
   })
-  cardNumber: string;
+  card_number: string;
 }

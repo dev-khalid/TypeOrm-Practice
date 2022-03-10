@@ -1,7 +1,20 @@
-import { Entity, PrimaryColumn, Column } from 'typeorm';
+import { Entity, PrimaryColumn, Column, ManyToMany, JoinTable } from 'typeorm';
+import { Client } from './Client';
 import { Person } from './utils/Person';
-@Entity()
+@Entity('banker')
 export class Banker extends Person {
-  @Column()
-  balance: number;
+  @Column({
+    length: 10, 
+    unique: true, 
+  }) 
+  employee_number: string; 
+  @ManyToMany((type) => Client, { 
+    cascade: true, 
+  })
+  @JoinTable({
+    name: 'bankers_clients', 
+
+  })
+  clients: Client[]; 
+
 }
