@@ -1,0 +1,6 @@
+Getting Started with typescript 
+  tsconfig.json should be included first 
+Then install the following dependency 
+  @types/express ts-node typescript typeorm pg 
+Inside Package.json file 
+  Script -> nodemon --watch ./**/*.ts --exec ts-node src/index.ts
